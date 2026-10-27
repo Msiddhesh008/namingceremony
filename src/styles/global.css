@@ -1,0 +1,244 @@
+@import './variables.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  height: 100dvh;
+}
+
+html:fullscreen,
+html:-webkit-full-screen {
+  background: var(--color-cream);
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 768px) {
+  body {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201, 162, 39, 0.18), transparent 45%),
+      linear-gradient(180deg, #5a1520 0%, #3d0f16 45%, #2a0a10 100%);
+  }
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app-shell {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0;
+}
+
+.app-column.invite-card {
+  width: 100%;
+  max-width: none;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(rgba(107, 28, 42, 0.035) 0.7px, transparent 0.7px),
+    radial-gradient(rgba(201, 162, 39, 0.04) 0.6px, transparent 0.6px),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(90, 60, 40, 0.018) 2px,
+      rgba(90, 60, 40, 0.018) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(90, 60, 40, 0.012) 3px,
+      rgba(90, 60, 40, 0.012) 4px
+    ),
+    linear-gradient(180deg, #fffaf2 0%, var(--color-cream) 40%, #f3e8d2 100%);
+  background-size:
+    7px 7px,
+    11px 11px,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-position:
+    0 0,
+    3px 5px,
+    0 0,
+    0 0,
+    0 0;
+  /* Edge-to-edge on mobile — no maroon frame */
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 39, 0.35);
+}
+
+.invite-body {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 7rem;
+}
+
+.floating-controls {
+  position: absolute;
+  right: var(--space-3);
+  bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  background: none;
+  pointer-events: none;
+}
+
+.floating-controls > * {
+  pointer-events: auto;
+  box-shadow: 0 10px 22px rgba(78, 18, 28, 0.28);
+}
+
+.lang-toggle,
+.music-toggle {
+  width: var(--tap-min);
+  height: var(--tap-min);
+  padding: 0;
+  border-radius: 50%;
+}
+
+.lang-toggle .premium-btn-inner,
+.music-toggle .premium-btn-inner {
+  padding: 0;
+  border-radius: 50%;
+  min-height: calc(var(--tap-min) - 4px);
+}
+
+.section {
+  padding: var(--space-4) var(--space-5);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-maroon);
+  margin: 0 0 var(--space-3);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.premium-btn {
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  min-height: var(--tap-min);
+  padding: 2px;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, var(--color-gold-bright), var(--color-gold), var(--color-gold-bright));
+  box-shadow: 0 8px 18px rgba(78, 18, 28, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.premium-btn-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: calc(var(--tap-min) - 4px);
+  padding: 0 var(--space-5);
+  border-radius: inherit;
+  background: var(--color-parchment);
+  color: var(--color-maroon);
+}
+
+.premium-btn-gold .premium-btn-inner {
+  background: linear-gradient(180deg, #f3e0a0, var(--color-gold));
+  color: var(--color-maroon-deep);
+}
+
+.premium-btn-magenta {
+  background: linear-gradient(135deg, var(--color-gold-bright), #8a2a3c, var(--color-gold));
+}
+
+.premium-btn-magenta .premium-btn-inner {
+  background: linear-gradient(180deg, var(--color-maroon-soft), var(--color-maroon));
+  color: var(--color-white);
+  letter-spacing: 0.03em;
+}
+
+.premium-btn-outline .premium-btn-inner {
+  background: var(--color-parchment);
+  color: var(--color-maroon);
+}
+
+.premium-btn:active {
+  transform: scale(0.97);
+}
+
+.premium-btn:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    padding: var(--space-8) var(--space-4);
+    align-items: flex-start;
+  }
+
+  .app-column.invite-card {
+    max-width: var(--column-max);
+    border: 10px solid var(--color-maroon);
+    border-radius: 4px;
+    box-shadow:
+      inset 0 0 0 2px var(--color-gold-soft),
+      0 24px 60px rgba(0, 0, 0, 0.35);
+  }
+}

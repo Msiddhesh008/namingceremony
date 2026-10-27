@@ -1,0 +1,44 @@
+:root {
+  --color-maroon: #6b1c2a;
+  --color-maroon-deep: #4e121c;
+  --color-maroon-soft: #8a2a3c;
+  --color-gold: #c9a227;
+  --color-gold-bright: #e0bd4f;
+  --color-gold-soft: #d4af37;
+  --color-marigold: #e8940a;
+  --color-cream: #fbf6eb;
+  --color-cream-deep: #f3e8d2;
+  --color-parchment: #fffaf2;
+  --color-ink: #3a1f24;
+  --color-ink-soft: #5c4046;
+  --color-white: #ffffff;
+  --color-shadow: rgba(78, 18, 28, 0.18);
+
+  /* legacy aliases used in older class names */
+  --color-magenta: var(--color-maroon);
+  --color-magenta-bright: var(--color-maroon-soft);
+  --color-teal: #6b4a2a;
+  --color-teal-soft: #8a6a45;
+  --color-marigold-deep: #c46e00;
+
+  --font-display: 'Tiro Devanagari Marathi', 'Noto Serif Devanagari', Georgia, serif;
+  --font-body: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif;
+  --font-english: 'Cormorant Garamond', 'Times New Roman', serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  --column-max: 440px;
+  --tap-min: 48px;
+}

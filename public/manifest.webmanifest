@@ -1,0 +1,20 @@
+{
+  "name": "नामकरण सोहळा | Naming Ceremony",
+  "short_name": "Namkaran",
+  "description": "Naming ceremony invitation",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#FBF6EB",
+  "theme_color": "#6B1C2A",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
